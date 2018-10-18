@@ -91,9 +91,10 @@ end
 
 def play(board)
   while !over?(board)
+    puts current_player(board)
     turn(board)
   end
-
+  puts current_player(board)
   if won?(board)
     puts "Congratulations #{current_player(board)}!"
   elsif draw?(board)
