@@ -47,8 +47,10 @@ end
 
 def turn_count(board)
   turn = 0
-  board.each do |i|
-    i == "X" || i == "O" ? turn += 1 : nil
+  if !over?(board)
+    board.each do |i|
+      i == "X" || i == "O" ? turn += 1 : nil
+    end
   end
   turn
 end
