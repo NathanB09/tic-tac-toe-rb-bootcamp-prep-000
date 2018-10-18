@@ -21,7 +21,7 @@ def input_to_index(n)
   n.to_i - 1
 end
 
-def move(array, u_index, char = "X")
+def move(array, u_index, char)
   array[u_index] = char
   array
 end
