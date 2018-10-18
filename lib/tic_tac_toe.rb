@@ -34,11 +34,11 @@ def valid_move?(array, index)
   !position_taken?(array, index) && index.between?(0, 8)
 end
 
-def turn(board)
+def turn(board, char = "X")
   puts "Please enter 1-9:"
   user_index = input_to_index(gets.strip)
   if valid_move?(board, user_index)
-    move(board, user_index, current_player(board))
+    move(board, user_index, char)
     display_board(board)
   else
     turn(board)
@@ -91,7 +91,6 @@ def winner(board)
 end
 
 def play(board)
-  turn(board)
   player_turn = turn_count(board)
   while player_turn < 9 && !over?(board)
     player_turn += 1
