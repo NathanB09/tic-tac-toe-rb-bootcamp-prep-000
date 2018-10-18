@@ -34,7 +34,7 @@ def valid_move?(array, index)
   !position_taken?(array, index) && index.between?(0, 8)
 end
 
-def turn(board, char = "X")
+def turn(board, char = "O")
   puts "Please enter 1-9:"
   user_index = input_to_index(gets.strip)
   if valid_move?(board, user_index)
