@@ -20,3 +20,7 @@ end
 def position_taken?(array, index)
   array[index] == "X" || array[index] == "O"
 end
+
+def valid_move?(array, index)
+  !position_taken?(array, index) && index.between?(0, 8)
+end
