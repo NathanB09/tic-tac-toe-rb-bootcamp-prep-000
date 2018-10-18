@@ -48,15 +48,13 @@ end
 def turn_count(board)
   turn = 0
   board.each do |i|
-    if i == "X" || i == "O"
-      turn += 1
-    end
+    i == "X" || i == "O" ? turn += 1 : nil
   end
   turn
 end
 
 def current_player(board)
-  turn_count(board) % 2 == 0 ? "X" : "O"
+  turn_count(board) % 2 == 0 ? "O" : "X"
 end
 
 def won?(board)
