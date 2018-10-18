@@ -91,8 +91,8 @@ end
 
 def play(board)
   player_turn = turn_count(board)
-  puts player_turn
   while player_turn < 9 && !over?(board)
+    puts player_turn
     turn(board, current_player(board))
   end
 
