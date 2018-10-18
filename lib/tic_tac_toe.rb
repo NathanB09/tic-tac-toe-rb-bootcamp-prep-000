@@ -86,7 +86,7 @@ def over?(board)
 end
 
 def winner(board)
-  board[won?(board)[0]]
+  won?(board).class == Array ? board[won?(board)[0]] : nil
 end
 
 def play(board)
