@@ -51,6 +51,7 @@ def turn_count(board)
   #   i == "X" || i == "O" ? turn += 1 : nil
   # end
   turn += 1
+  puts turn
   turn
 end
 
