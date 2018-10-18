@@ -45,18 +45,6 @@ def turn(board)
   end
 end
 
-def play(board)
-  player_turn = 0
-  while player_turn < 9
-    player_turn += 1
-    if player_turn % 2 == 0
-      turn(board, "O")
-    else
-      turn(board, "X")
-    end
-  end
-end
-
 def turn_count(board)
   turn = 0
   board.each do |i|
@@ -100,4 +88,12 @@ end
 
 def winner(board)
   won?(board).class == Array ? board[won?(board)[0]] : nil
+end
+
+def play(board)
+  player_turn = 0
+  while player_turn < 9 && !over?(board)
+    player_turn += 1
+    player_turn % 2 == 0 ? turn(board, "O") : turn(board, "X")
+  end
 end
