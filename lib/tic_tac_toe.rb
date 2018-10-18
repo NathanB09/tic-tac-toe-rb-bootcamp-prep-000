@@ -93,6 +93,7 @@ end
 def play(board)
   while !over?(board)
     turn(board)
+    turn_count
   end
 
   if won?(board)
