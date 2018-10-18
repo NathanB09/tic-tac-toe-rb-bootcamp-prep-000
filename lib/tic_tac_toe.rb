@@ -21,17 +21,17 @@ def input_to_index(n)
   n.to_i - 1
 end
 
-def move(array, u_index, char)
-  array[u_index] = char
-  array
+def move(board, u_index, char)
+  board[u_index] = char
+  board
 end
 
-def position_taken?(array, index)
-  array[index] == "X" || array[index] == "O"
+def position_taken?(board, index)
+  board[index] == "X" || board[index] == "O"
 end
 
-def valid_move?(array, index)
-  !position_taken?(array, index) && index.between?(0, 8)
+def valid_move?(board, index)
+  !position_taken?(board, index) && index.between?(0, 8)
 end
 
 def turn(board)
