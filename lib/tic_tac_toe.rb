@@ -35,3 +35,15 @@ def turn(board)
     turn(board)
   end
 end
+
+def play(board)
+  player_turn = 0
+  while player_turn < 9
+    player_turn += 1
+    if player_turn % 2 == 0
+      turn(board, "O")
+    else
+      turn(board, "X")
+    end
+  end
+end
