@@ -47,10 +47,9 @@ end
 
 def turn_count
   turn = 0
-  # board.each do |i|
-  #   i == "X" || i == "O" ? turn += 1 : nil
-  # end
-  turn += 1
+  board.each do |i|
+    i == "X" || i == "O" ? turn += 1 : nil
+  end
   turn
 end
 
@@ -93,7 +92,6 @@ end
 def play(board)
   while !over?(board)
     turn(board)
-    turn_count
   end
 
   if won?(board)
