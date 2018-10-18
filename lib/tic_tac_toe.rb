@@ -90,7 +90,9 @@ def winner(board)
 end
 
 def play(board)
-  while turn_count(board) < 9 && !over?(board)
+  player_turn = turn_count(board)
+  puts player_turn
+  while player_turn < 9 && !over?(board)
     turn(board, current_player(board))
   end
 
