@@ -91,9 +91,12 @@ def winner(board)
 end
 
 def play(board)
-  player_turn = 0
+  current_player(board)
   while player_turn < 9 && !over?(board)
     player_turn += 1
     player_turn % 2 == 0 ? turn(board, "O") : turn(board, "X")
   end
+
+  if won?(board)
+    puts "Congratulations player #{}"
 end
