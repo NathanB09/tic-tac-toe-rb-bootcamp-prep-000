@@ -46,7 +46,7 @@ def turn(board, char = "X")
 end
 
 def turn_count(board)
-  turn = 0
+  turn = 1
   board.each do |i|
     i == "X" || i == "O" ? turn += 1 : nil
   end
