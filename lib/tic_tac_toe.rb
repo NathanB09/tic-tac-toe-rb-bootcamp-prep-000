@@ -46,7 +46,7 @@ def turn(board, char = "X")
 end
 
 def turn_count(board)
-  turn = -1
+  turn = 0
   board.each do |i|
     i == "X" || i == "O" ? turn += 1 : nil
   end
@@ -92,8 +92,7 @@ end
 def play(board)
   player_turn = turn_count(board)
   while player_turn < 9 && !over?(board)
-    player_turn += 1
-    player_turn % 2 == 0 ? turn(board, "O") : turn(board, "X")
+    turn(board, current_player(board))
   end
 
   if won?(board)
